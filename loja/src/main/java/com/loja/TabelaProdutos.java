@@ -81,4 +81,10 @@ public Produto cadastrarNovoProduto(Produto novoProduto) {
 
 }
 
+        public void removerProduto(int produtoId) {
+        Produto produtoRemover = this.buscarProdutoPeloId(produtoId);
+        this.produtos.remove(produtoRemover);
+
+}
+
 }
