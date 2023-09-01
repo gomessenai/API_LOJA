@@ -19,7 +19,7 @@ public class TabelaProdutos {
         Produto tesoura = new Produto (7, "Tesoura CASTELL", "Tesoura sem ponta", 9.99);
         Produto sulfite = new Produto (8, "Sulfite", "Pacote de 90 folhas", 19.99);
         Produto cola = new Produto (9, "Cola ", "Cola Branca", 2.99);
-        Produto lapiseira = new Produto (5, "Lapiseira Castell", "Lapiseira da melhor qualidade", 4.99);
+        Produto lapiseira = new Produto (10, "Lapiseira Castell", "Lapiseira da melhor qualidade", 4.99);
 
         this.produtos.add(caneta);
         this.produtos.add(borracha);
@@ -68,6 +68,16 @@ public Produto cadastrarNovoProduto(Produto novoProduto) {
         novoProduto.setId(proximoId);
         this.produtos.add(novoProduto);
         return novoProduto;
+
+}
+
+        public void  atualizarProduto(int produtoId, Produto produtoAtualizar) {
+        Produto produtoProcurado = this.buscarProdutoPeloId(produtoId);
+        if (produtoProcurado != null) {
+            produtoProcurado.setNome(produtoAtualizar.getNome());
+            produtoProcurado.setDescricao(produtoAtualizar.getDescricao());
+            produtoProcurado.setValorUnitario(produtoAtualizar.getValorUnitario());
+        }
 
 }
 
