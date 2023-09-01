@@ -15,6 +15,11 @@ public class TabelaProdutos {
         Produto lapis = new Produto(3, "Lapis Faber Caster", "Lapis Faber Castel comum", 2.99);
         Produto apontador = new Produto(4,"Apontador", "Apontador comum com reservatório", 7.99);
         Produto caderno = new Produto (5, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
+        Produto corretivo = new Produto (6, "Corretivo Branco", "Corretivo de boa qualidade", 4.99);
+        Produto tesoura = new Produto (7, "Tesoura CASTELL", "Tesoura sem ponta", 9.99);
+        Produto sulfite = new Produto (8, "Sulfite", "Pacote de 90 folhas", 19.99);
+        Produto apontador = new Produto (9, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
+        Produto caderno = new Produto (5, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
 
         this.produtos.add(caneta);
         this.produtos.add(borracha);
@@ -33,4 +38,22 @@ public class TabelaProdutos {
     public List<Produto> buscarTodosOsProdutos() {
         return this.getProdutos();
     }
+
+    /**
+     * Método que busca um produto pelo seu ID
+     * Caso não encontre vai retornar nulo
+     * @param produtoId
+     * @return
+     */
+    public Produto buscarProdutoPeloId(int produtoId) {
+        Produto produtoProcurado = null;
+        for (Produto p: this.produtos) {
+            if (p.getId() == produtoId) {
+                produtoProcurado = p;
+                break;
+            }
+        }
+    return produtoProcurado;
+}
+
 }
