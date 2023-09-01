@@ -18,14 +18,19 @@ public class TabelaProdutos {
         Produto corretivo = new Produto (6, "Corretivo Branco", "Corretivo de boa qualidade", 4.99);
         Produto tesoura = new Produto (7, "Tesoura CASTELL", "Tesoura sem ponta", 9.99);
         Produto sulfite = new Produto (8, "Sulfite", "Pacote de 90 folhas", 19.99);
-        Produto apontador = new Produto (9, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
-        Produto caderno = new Produto (5, "Caderno espiral", "Caderno espiral de 96 folhas", 15.99);
+        Produto cola = new Produto (9, "Cola ", "Cola Branca", 2.99);
+        Produto lapiseira = new Produto (5, "Lapiseira Castell", "Lapiseira da melhor qualidade", 4.99);
 
         this.produtos.add(caneta);
         this.produtos.add(borracha);
         this.produtos.add(lapis);
         this.produtos.add(apontador);
         this.produtos.add(caderno);
+        this.produtos.add(corretivo);
+        this.produtos.add(tesoura);
+        this.produtos.add(sulfite);
+        this.produtos.add(cola);
+        this.produtos.add(lapiseira);
 
     }
 
@@ -54,6 +59,16 @@ public class TabelaProdutos {
             }
         }
     return produtoProcurado;
+}
+
+public Produto cadastrarNovoProduto(Produto novoProduto) {
+        int ultimoIndex = this.produtos.size() - 1;
+        Produto ultimoProduto = this.produtos.get(ultimoIndex);
+        int proximoId = ultimoProduto.getId() + 1;
+        novoProduto.setId(proximoId);
+        this.produtos.add(novoProduto);
+        return novoProduto;
+
 }
 
 }
